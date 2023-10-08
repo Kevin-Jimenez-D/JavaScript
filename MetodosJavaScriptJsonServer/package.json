@@ -1,0 +1,16 @@
+{
+  "name": "metodosjavascriptjsonserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "json-server --watch db.json"
+  },
+  "keywords": [],
+  "author": "Kevin JJ",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "0.17.4"
+  }
+}
