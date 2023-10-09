@@ -56,3 +56,80 @@ console.log(cadena.endsWith('S'));     //Devuelve si termina con ese caracter
 
 
 //Manipulacion de objetos en JavaScript
+
+//Creacion de un nuevo objeto con la creación de nuevas propiedades
+var myCar = new Object();
+myCar.make = "Ford";
+myCar.model = "Mustang";
+myCar.year = 1969;
+console.log(myCar);
+
+//Acceder o establecer las propiedades de los objetos en JavaScript mediante la notación de corchetes
+//Establecer elementos
+myCar["make"] = "Jeep";
+myCar["model"] = "Chevrolet";
+myCar["year"] = 2000;
+
+console.log(myCar["model"]);   //Acceder a un solo elemento
+console.log(myCar);            //Acceder a todo el objeto en si
+
+
+// Se crean y asignan cuatro variables de una sola vez,
+// separadas por comas
+//Si accedo a str en la consola saldra myString
+//SI accedo a rand, en la consola saldrá un numero aleatorio
+//SI accedo a obj, en la consola se vera ese nuevo objeto
+var myObj = new Object(),
+  str = "myString",
+  rand = Math.random(),
+  obj = new Object();
+
+myObj.type = "Sintaxis de puntos";
+
+//Crear un nuevo elemento con esa propiedad y con el respectivo valor
+myObj["fecha de creación"] = "Cadena con espacios";
+
+myObj[str] = "Valor de cadena";
+myObj[rand] = "Número aleatorio";
+myObj[obj] = "Object";
+
+//Crear un nuevo elemento con cadena vacia con el elemento que se ve
+myObj[""] = "Incluso una cadena vacía";
+
+console.log(myObj);
+
+
+//Acceder a las propiedades mediante el uso de un valor de cadena que se almacena en una variable:
+var propertyName = "make";
+myCar[propertyName] = "Ford";
+
+propertyName = "model";
+myCar[propertyName] = "Mustang";
+
+console.log(myCar);
+
+
+
+//ELiminar propiedades
+//Crea un nuevo objeto, ok, con dos propiedades, a y b.
+var ok = new Object();
+ok.a = 5;
+ok.b = 12;
+
+// Elimina la propiedad a, dejando a ok solo con la propiedad b.
+delete ok.a;
+console.log("a" in ok); // muestra: "false"
+console.log(ok);
+
+
+//COmparar objetos
+// Dos variables, un solo objeto
+var fruit = { name: "apple" };
+var fruitbear = fruit; // Asigna la referencia del objeto fruit a fruitbear
+
+// Aquí fruit y fruitbear apuntan al mismo objeto
+fruit == fruitbear; // devuelve true
+fruit === fruitbear; // devuelve true
+
+fruit.name = "grape";
+console.log(fruitbear); // Produce: { name: "grape" }, en lugar de { name: "apple" }
