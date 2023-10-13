@@ -111,6 +111,37 @@ export const putOne = async(obj={})=>{
     return res;
 }
 
+/* Comentarios sobre el código en general
+
+Este código en JavaScript es un módulo que parece estar relacionado con operaciones de una API web para administrar libros. A continuación, te explicaré la lógica y funcionalidad de este módulo:
+
+Importación de módulos: El código comienza importando dos módulos, getOneCategoria y getOneAutor, desde archivos llamados "categoria.js" y "autor.js", respectivamente. Estos módulos probablemente contienen funciones para obtener información de categorías y autores.
+
+Importación de variables de configuración: El código importa una variable llamada env desde un archivo "config.js". Esta variable podría contener configuraciones de la aplicación, como la URL del servidor.
+
+Definición de constantes: Se define una constante llamada uri, que combina el protocolo (https o http), el nombre del host y el puerto, utilizando la información de la variable env. Esto establece la dirección base para las solicitudes a la API.
+
+Configuración de las solicitudes: Se crea un objeto config que contiene información sobre las solicitudes HTTP. Inicialmente, el método se establece como undefined, y se especifica que el tipo de contenido es JSON. Este objeto se utilizará en todas las solicitudes realizadas por este módulo.
+
+Funciones de validación: El código define dos funciones de validación, validarEstructura y validarDataBasic. Ambas funciones verifican si un objeto pasado como argumento cumple con una serie de requisitos específicos. Si alguna de estas funciones encuentra un error en los datos, devuelve un objeto con un código de estado y un mensaje de error. De lo contrario, devuelve el objeto de datos original.
+
+Exportación de funciones: El módulo exporta varias funciones que se utilizan para interactuar con la API web:
+
+getAll: Realiza una solicitud GET para obtener todos los libros. La respuesta se procesa y se devuelve como un objeto JSON.
+
+getOne: Realiza una solicitud GET para obtener un libro específico según su ID.
+
+getRelationships: Realiza una solicitud GET para obtener todos los libros y, posteriormente, enriquece los datos con información sobre categorías y autores mediante las funciones getOneCategoria y getOneAutor. Devuelve un arreglo de libros enriquecidos.
+
+post: Realiza una solicitud POST para crear un nuevo libro. Antes de enviar la solicitud, se validan los datos utilizando la función validarEstructura.
+
+deleteOne: Realiza una solicitud DELETE para eliminar un libro específico según su ID.
+
+putOne: Realiza una solicitud PUT para actualizar un libro existente. Dependiendo de la versión especificada en el argumento limit, se utilizan diferentes funciones de validación (por estructura completa o datos básicos) antes de realizar la actualización.
+
+En resumen, este módulo proporciona una interfaz para interactuar con una API web relacionada con la administración de libros. Realiza solicitudes HTTP, valida los datos de entrada y exporta funciones que se utilizan para realizar operaciones comunes de CRUD (Crear, Leer, Actualizar, Eliminar) en libros. Además, enriquece los datos de libros con información sobre categorías y autores en la función getRelationships.
+*/
+
 
 // console.log(await getRelationships());
 
